@@ -12,7 +12,17 @@
 - `tests.py`: файл с тестами, которые проверяют правильность решения.
 
 ### Пример структуры папок
-python_course_for_teachers/ │ ├── lesson_1/ │ ├── task_A/ │ │ ├── solution.py │ │ └── tests.py │ ├── task_B/ │ │ ├── solution.py │ │ └── tests.py │ └── ... │ ├── lesson_2/ │ ├── task_A/ │ │ ├── solution.py │ │ └── tests.py │ └── ... │ └── ...
+python_course_for_teachers/
+│
+├── lesson_1/
+│ ├── task_A/
+│ │ ├── solution.py 
+│ │ └── tests.py 
+│ ├── task_B/ 
+│ │ ├── solution.py 
+│ │ └── tests.py 
+│ └── ... 
+│ ├── lesson_2/ │ ├── task_A/ │ │ ├── solution.py │ │ └── tests.py │ └── ... │ └── ...
 
 
 ## Инструкции по решению задач
