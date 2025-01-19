@@ -11,10 +11,10 @@ class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи С (модуль 3)...")
+        print("Тесты для задачи E (модуль 3)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_3", "task_C", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_3", "task_E", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -36,24 +36,24 @@ class TestTaskSolution(unittest.TestCase):
         """Test with random strings (len = 6)"""
         characters = string.ascii_letters + string.digits + " "
         for _ in range(10):
-            random_string = "".join(choice(characters) for k in range(6))
-            output_strings = [
-                a for a in self.run_program_with_input(random_string).splitlines()
-            ]
-            expected_strings = [
-                random_string[0],
-                random_string[-1],
-                str(len(random_string)),
-                random_string[1:4],
-                str(random_string.count(' ')),
-                random_string.replace(' ', '')
-            ]
-            for i in range(6):
-                self.assertEqual(
-                    output_strings[i],
-                    expected_strings[i],
-                    msg=f'Неверный ответ на вопрос №{i + 1}'
-                )
+            random_string = ""
+            my_dict = dict()
+            for j in range(3):
+                key = "".join(choice(characters) for k in range(6))
+                value = "".join(choice(characters) for k in range(6))
+                my_dict[key] = value
+                if random_string:
+                    random_string = random_string + "\n" + key + "\n" + value
+                else:
+                    random_string = key + "\n" + value
+            output_strings = self.run_program_with_input(random_string)
+            print(output_strings)
+            expected_string = str(my_dict)
+            self.assertIn(
+                expected_string,
+                output_strings,
+                msg="В выводе не обнаружен правильный словарь",
+            )
 
 
 if __name__ == "__main__":

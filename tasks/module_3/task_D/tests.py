@@ -4,7 +4,7 @@ import sys
 import os
 
 
-class TestTaskASolution(unittest.TestCase):
+class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
