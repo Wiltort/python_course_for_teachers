@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from unittest.mock import patch
 
 
-class TestTaskASolution(unittest.TestCase):
+class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)

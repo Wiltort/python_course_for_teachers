@@ -8,7 +8,7 @@ class TestTaskASolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи А...")
+        print("Тесты для задачи D (модуль 3)...")
 
     @classmethod
     def tearDownClass(cls):
@@ -20,7 +20,7 @@ class TestTaskASolution(unittest.TestCase):
         sys.stdout = self.captured_output
 
         # Import the solution script
-        self.solution_path = os.path.join("lesson_1", "task_A", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_3", "task_D", "solution.py")
         with open(self.solution_path, "r") as file:
             exec(file.read(), globals())
 

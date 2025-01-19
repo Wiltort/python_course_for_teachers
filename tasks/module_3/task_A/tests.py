@@ -3,17 +3,16 @@ from io import StringIO
 import os
 from contextlib import contextmanager
 from unittest.mock import patch
-from random import sample
 
 
 class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи B (модуль 2)...")
+        print("Тесты для задачи A (модуль 3)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_2", "task_B", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_3", "task_A", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -30,24 +29,17 @@ class TestTaskSolution(unittest.TestCase):
         with self._run_with_input(input_text) as output:
             return output
 
-    def test_numbers123(self):
-        """Test with numbers 1, 2, 3"""
-        input_text = "1\n2\n3"
-        expected_output = str(6)
-        self.assertEqual(self.run_program_with_input(input_text), expected_output)
+    def test_latin(self):
+        """Test with latin chars"""
+        input_text = "Anna\n18"
+        expected_output = "Вас зовут Anna. Ваш возраст: 18!"
+        self.assertIn(self.run_program_with_input(input_text), expected_output)
 
-    def test_zero(self):
-        """Test with zero"""
-        input_text = "2\n0\n3"
-        expected_output = "0"
-        self.assertEqual(self.run_program_with_input(input_text), expected_output)
-
-    def test_random(self):
-        """Test with random numbers"""
-        numbers = sample(range(0, 1001), 3)
-        input_text = '\n'.join(map(str, numbers))
-        expected_output = str(numbers[0]*numbers[1]*numbers[2])
-        self.assertEqual(self.run_program_with_input(input_text), expected_output)
+    def test_cyrillic(self):
+        """Test with cyrillic chars"""
+        input_text = "Дима\n50"
+        expected_output = "Вас зовут Дима. Ваш возраст: 50!"
+        self.assertIn(self.run_program_with_input(input_text), expected_output)
 
 
 if __name__ == "__main__":

@@ -3,17 +3,17 @@ from io import StringIO
 import os
 from contextlib import contextmanager
 from unittest.mock import patch
-from random import sample
+from random import randint
 
 
 class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи B (модуль 2)...")
+        print("Тесты для задачи B (модуль 3)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_2", "task_B", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_3", "task_B", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -30,24 +30,26 @@ class TestTaskSolution(unittest.TestCase):
         with self._run_with_input(input_text) as output:
             return output
 
-    def test_numbers123(self):
+    def test_5_53(self):
         """Test with numbers 1, 2, 3"""
-        input_text = "1\n2\n3"
-        expected_output = str(6)
+        input_text = "5\n53"
+        expected_output = "10"
         self.assertEqual(self.run_program_with_input(input_text), expected_output)
 
     def test_zero(self):
         """Test with zero"""
-        input_text = "2\n0\n3"
+        input_text = "3\n0"
         expected_output = "0"
         self.assertEqual(self.run_program_with_input(input_text), expected_output)
 
-    def test_random(self):
+    def test_random_10(self):
         """Test with random numbers"""
-        numbers = sample(range(0, 1001), 3)
-        input_text = '\n'.join(map(str, numbers))
-        expected_output = str(numbers[0]*numbers[1]*numbers[2])
-        self.assertEqual(self.run_program_with_input(input_text), expected_output)
+        for _ in range(10):
+            price = randint(1, 1000)
+            cash = randint(1, 2000)
+            input_text = f"{price}\n{cash}"
+            expected_output = str(cash // price)
+            self.assertEqual(self.run_program_with_input(input_text), expected_output)
 
 
 if __name__ == "__main__":
