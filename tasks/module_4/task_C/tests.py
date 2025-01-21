@@ -10,10 +10,10 @@ class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи B (модуль 4)...")
+        print("Тесты для задачи C (модуль 4)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_4", "task_B", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_4", "task_C", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -32,9 +32,31 @@ class TestTaskSolution(unittest.TestCase):
 
     def test_random_10(self):
         """Test with 10 random numbers"""
+        tens = {
+            "2": "двадцать",
+            "3": "тридцать",
+            "4": "сорок",
+            "5": "пятьдесят",
+            "6": "шестьдесят",
+            "7": "семьдесят",
+            "8": "восемьдесят",
+            "9": "девяносто" 
+        }
+        ones = {
+            "0": "",
+            "1": " один",
+            "2": " два",
+            "3": " три",
+            "4": " четыре",
+            "5": " пять",
+            "6": " шесть",
+            "7": " семь",
+            "8": " восемь",
+            "9": " девять"
+        }
         for _ in range(10):
-            input_text = f"{str(randint(100,1000000))}\n"
-            expected_output = "да" if input_text[0] == input_text[-1] else "нет"
+            input_text = f"{randint(20,99)}\n"
+            expected_output = tens[input_text[0]] + ones[input_text[1]]
             self.assertEqual(
                 self.run_program_with_input(input_text).lower(),
                 expected_output,

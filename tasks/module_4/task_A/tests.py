@@ -13,7 +13,7 @@ class TestTaskSolution(unittest.TestCase):
         print("Тесты для задачи A (модуль 4)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_3", "task_A", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_4", "task_A", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -35,7 +35,7 @@ class TestTaskSolution(unittest.TestCase):
         for _ in range(10):
             input_text = f"{str(randint(1,100))}\n"
             expected_output = "четное" if int(input_text) % 2 == 0 else "нечетное"
-            self.assertIn(
+            self.assertEqual(
                 self.run_program_with_input(input_text).lower(),
                 expected_output,
                 msg="Неверный ответ")
