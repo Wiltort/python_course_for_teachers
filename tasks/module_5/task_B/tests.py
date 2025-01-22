@@ -28,11 +28,11 @@ class TestTaskSolution(unittest.TestCase):
             'Harry Potter and Germiona': 'harry_potter_and_germiona',
             'For the Glory': 'for_the_glory',
             'ARIA FOREVER': 'aria_forever',
-            'if You want': 'if_you_want',
+            ' if    You  want': 'if_you_want',
             'aA   hsjA': 'aa_hsja',
-            ' a you ready   ': 'a_you_ready',
+            ' are you ready   ': 'are_you_ready',
             'sDj': 'sdj',
-            'sto raz': 'sto_raz'
+            '          sto raz': 'sto_raz'
         }
 
         for key in test_data:
