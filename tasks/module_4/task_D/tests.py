@@ -3,17 +3,18 @@ from io import StringIO
 import os
 from contextlib import contextmanager
 from unittest.mock import patch
-from random import randint
+from random import choice
+import string
 
 
 class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи C (модуль 4)...")
+        print("Тесты для задачи D (модуль 4)...")
 
     def setUp(self):
-        self.solution_path = os.path.join("tasks", "module_4", "task_C", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_4", "task_D", "solution.py")
 
     @contextmanager
     def _run_with_input(self, input_text):
@@ -31,35 +32,20 @@ class TestTaskSolution(unittest.TestCase):
             return output
 
     def test_random_10(self):
-        """Test with 10 random numbers"""
-        tens = {
-            "2": "двадцать",
-            "3": "тридцать",
-            "4": "сорок",
-            "5": "пятьдесят",
-            "6": "шестьдесят",
-            "7": "семьдесят",
-            "8": "восемьдесят",
-            "9": "девяносто" 
-        }
-        ones = {
-            "0": "",
-            "1": " один",
-            "2": " два",
-            "3": " три",
-            "4": " четыре",
-            "5": " пять",
-            "6": " шесть",
-            "7": " семь",
-            "8": " восемь",
-            "9": " девять"
-        }
+        """Test with 10 random strings"""
+        characters = string.ascii_letters + string.digits + " "
         for _ in range(10):
-            input_text = f"{randint(20,99)}\n"
-            expected_output = tens[input_text[0]] + ones[input_text[1]]
+            random_string = "".join(choice(characters) for i in range(20))
+            right_dict = dict()
+            for char in random_string:
+                letter = char.lower()
+                if letter in right_dict:
+                    right_dict[letter] += 1
+                else:
+                    right_dict[letter] = 1
             self.assertEqual(
-                self.run_program_with_input(input_text).lower(),
-                expected_output,
+                eval(self.run_program_with_input(random_string)),
+                right_dict,
                 msg="Неверный ответ")
 
 
