@@ -8,7 +8,7 @@ class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи B (модуль 7)...")
+        print("Тесты для задачи C (модуль 7)...")
         sys.path.append(
             os.path.abspath(
                 os.path.join(
@@ -21,7 +21,7 @@ class TestTaskSolution(unittest.TestCase):
         from timeout import run_with_timeout
 
         self.timeout = 1
-        self.solution_path = os.path.join("tasks", "module_7", "task_B", "solution.py")
+        self.solution_path = os.path.join("tasks", "module_7", "task_C", "solution.py")
         self.captured_output = StringIO()
         sys.stdout = self.captured_output
         with open(self.solution_path, "r") as file:
@@ -33,11 +33,10 @@ class TestTaskSolution(unittest.TestCase):
 
     def test_right_solution(self):
         """Test with right solution"""
-        expected = "2072\n"
+        expected = "963 282747\n"
         result = self.captured_output.getvalue()
         self.assertIsNotNone(
-            result,
-            msg="Программа не получила верное значение за отведенное время!"
+            result, msg="Программа не получила верное значение за отведенное время!"
         )
         self.assertEqual(result, expected, msg="Неверный ответ")
 
