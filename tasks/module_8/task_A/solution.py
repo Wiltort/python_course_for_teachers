@@ -12,10 +12,17 @@
 
 # TODO: Напишите свой код ниже
 
-f = open("input_data/m8_A.txt").readline()
-len_pairs = 0
-max_len = 0
-l = len(f)
- 
-
-
+with open("input_data/m8_A.txt") as f:
+    input_string = f.readline()
+input_string = input_string.replace('AB', 'x')
+input_string = input_string.replace('CB', 'x')
+word_len = 0
+max_word_len = 0
+for char in input_string:
+    if char == 'x':
+        word_len += 1
+    else:
+        max_word_len = max(word_len, max_word_len)
+        word_len = 0
+max_word_len = max(word_len, max_word_len)
+print(max_word_len)
