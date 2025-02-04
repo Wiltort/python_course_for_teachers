@@ -10,6 +10,7 @@
 
 # TODO: Напишите свой код ниже
 
+
 def is_special(n):
     for char in str(n):
         if char in {'0', '2', '4', '6', '8'}:
@@ -30,6 +31,7 @@ def d(n):
         return 0, len(specials)
     return sorted(specials)[-5], len(specials)
 
+
 count = 0
 results = []
 for i in range(299999999, 1, -1):
@@ -40,4 +42,4 @@ for i in range(299999999, 1, -1):
         if count == 5:
             break
 for item in results[::-1]:
-        print(*item)
+    print(*item)
