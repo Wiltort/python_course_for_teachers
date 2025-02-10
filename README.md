@@ -52,4 +52,4 @@
 ## Разработчик:
 ### Королев Виктор
 - Email: wiltort21@gmail.com
-- GitHub: github.com/Wiltort
+- GitHub: https://github.com/Wiltort
