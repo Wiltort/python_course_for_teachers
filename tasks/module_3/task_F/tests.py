@@ -64,16 +64,19 @@ class TestTaskSolution(unittest.TestCase):
 
     def test_console_output(self):
         # Проверяем правильность вывода в терминал
-        self.assertIn(
-            str(third_set),
-            self.captured_output.getvalue(),
-            msg="В терминале отсутствует third_set (пункт 4)!",
-        )
-        self.assertIn(
-            str(list(third_set)),
-            self.captured_output.getvalue(),
-            msg="В терминале отсутствует my_list (пункт 5)!",
-        )
+        try:
+            self.assertIn(
+                str(third_set),
+                self.captured_output.getvalue(),
+                msg="В терминале отсутствует third_set (пункт 4)!",
+            )
+            self.assertIn(
+                str(list(third_set)),
+                self.captured_output.getvalue(),
+                msg="В терминале отсутствует my_list (пункт 5)!",
+            )
+        except NameError:
+            self.assertTrue(False, msg='Переменные не найдены')
 
 
 if __name__ == "__main__":

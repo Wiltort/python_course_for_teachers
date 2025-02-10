@@ -39,18 +39,24 @@ class TestTaskSolution(unittest.TestCase):
 
     def test_my_list_length(self):
         # Проверяем, что длина списка my_list равна 6
-        self.assertEqual(
-            len(my_list),
-            6,
-            msg="После выполнения программы длина списка my_list должна быть равна 6!",
-        )
+        try:
+            self.assertEqual(
+                len(my_list),
+                6,
+                msg="После выполнения программы длина списка my_list должна быть равна 6!",
+            )
+        except NameError:
+            self.assertTrue(False, msg='my_list не найден')
 
     def test_my_list_content(self):
         # Проверяем, что список my_list содержит разнотипные элементы
-        types = {type(item) for item in my_list[:4]}
-        self.assertGreater(
-            len(types), 3, msg="my_list должен состоять из разнотипных элементов!"
-        )
+        try:
+            types = {type(item) for item in my_list[:4]}
+            self.assertGreater(
+                len(types), 3, msg="my_list должен состоять из разнотипных элементов!"
+            )
+        except NameError:
+            self.assertTrue(False, msg='my_list не найден!')
 
     def test_console_output(self):
         # Проверяем правильность вывода в терминал

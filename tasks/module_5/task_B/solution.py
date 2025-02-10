@@ -27,3 +27,4 @@
 
 def snake_case(name):
     # TODO: Напишите свой код ниже
+    pass

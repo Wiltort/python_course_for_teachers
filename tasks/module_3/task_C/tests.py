@@ -48,12 +48,15 @@ class TestTaskSolution(unittest.TestCase):
                 str(random_string.count(' ')),
                 random_string.replace(' ', '')
             ]
-            for i in range(6):
-                self.assertEqual(
-                    output_strings[i],
-                    expected_strings[i],
-                    msg=f'Неверный ответ на вопрос №{i + 1}'
-                )
+            try:
+                for i in range(6):
+                    self.assertEqual(
+                        output_strings[i],
+                        expected_strings[i],
+                        msg=f'Неверный ответ на вопрос №{i + 1}'
+                    )
+            except IndexError:
+                self.assertTrue(False, msg='отсутсвуют верные ответы!')
 
 
 if __name__ == "__main__":

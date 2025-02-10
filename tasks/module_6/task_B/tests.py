@@ -53,7 +53,7 @@ class TestTaskSolution(unittest.TestCase):
                 self.run_program_with_input, self.timeout, item["input"]
             )
             self.assertIsNotNone(result, msg="Время выполнения функции превышено!")
-            self.assertEqual(int(result), item["output"], msg="Неверный ответ")
+            self.assertEqual(result, str(item["output"]), msg="Неверный ответ")
 
 
 if __name__ == "__main__":

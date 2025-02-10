@@ -8,7 +8,7 @@ class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("-" * 70)
-        print("Тесты для задачи A (модуль 9)...")
+        print("Тесты для задачи A (модуль 10)...")
         sys.path.append(
             os.path.abspath(
                 os.path.join(
@@ -20,8 +20,8 @@ class TestTaskSolution(unittest.TestCase):
     def setUp(self):
         from timeout import run_with_timeout
 
-        self.timeout = 1
-        self.solution_path = os.path.join("tasks", "module_9", "task_A", "solution.py")
+        self.timeout = 30
+        self.solution_path = os.path.join("tasks", "module_10", "task_A", "solution.py")
         self.captured_output = StringIO()
         sys.stdout = self.captured_output
         with open(self.solution_path, "r", encoding="utf-8") as file:
@@ -33,7 +33,7 @@ class TestTaskSolution(unittest.TestCase):
 
     def test_right_solution(self):
         """Test with right solution"""
-        expected = "56509 113018\n56519 113038\n863 113053\n56527 113054\n677 113059\n"
+        expected = "10738 30730\n34270 50438\n"
         result = self.captured_output.getvalue()
         self.assertIsNotNone(
             result, msg="Программа не получила верное значение за отведенное время!"
