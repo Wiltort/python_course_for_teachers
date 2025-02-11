@@ -27,4 +27,12 @@
 
 def snake_case(name):
     # TODO: Напишите свой код ниже
-    pass
+    result = []
+    for char in name.lower():
+        if char == ' ' and result and result[-1] != '_':
+            result.append('_')
+        if char != ' ':
+            result.append(char)
+    if result[-1] == '_':
+        result.pop()
+    return ''.join(result)

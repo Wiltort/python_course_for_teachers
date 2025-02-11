@@ -9,3 +9,10 @@
 """
 
 # TODO: Напишите свой код ниже
+A = input()
+print(A[0])
+print(A[-1])
+print(len(A))
+print(A[1:4])
+print(A.count(' '))
+print(A.replace(' ', ''))

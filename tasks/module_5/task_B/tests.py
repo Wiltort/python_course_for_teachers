@@ -3,6 +3,7 @@ import unittest
 import os
 
 
+
 class TestTaskSolution(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -22,7 +23,10 @@ class TestTaskSolution(unittest.TestCase):
     def test_pairs(self):
         """Test with pairs"""
         from timeout import run_with_timeout
-        from solution import snake_case
+        try:
+            from solution import snake_case
+        except ModuleNotFoundError:
+            from tasks.module_5.task_B.solution import snake_case
 
         test_data = {
             'Harry Potter and Germiona': 'harry_potter_and_germiona',
