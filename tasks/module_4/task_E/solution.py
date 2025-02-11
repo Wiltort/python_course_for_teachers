@@ -24,3 +24,9 @@
 """
 
 # TODO: Напишите свой код ниже
+s = input()
+t = input()
+chars = list(t)
+for char in s:
+    chars.remove(char)
+print(chars[0])

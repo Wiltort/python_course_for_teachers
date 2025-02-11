@@ -7,4 +7,4 @@
 
 def rectangle_area(a, b):
     # TODO: Напишите свой код ниже
-    
+    return a * b

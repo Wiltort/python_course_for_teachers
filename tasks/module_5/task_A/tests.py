@@ -23,7 +23,10 @@ class TestTaskSolution(unittest.TestCase):
     def test_random_10(self):
         """Test with 10 random pairs"""
         from timeout import run_with_timeout
-        from solution import rectangle_area
+        try:
+            from solution import rectangle_area
+        except ModuleNotFoundError:
+            from tasks.module_5.task_A.solution import rectangle_area
 
         for _ in range(10):
             pair = [randint(1, 10000) for i in range(2)]

@@ -20,3 +20,6 @@ Sample Output 2:
 
 # TODO: Напишите свой код ниже
 
+string_number = input()
+output = "ДА" if string_number[0] == string_number[-1] else "НЕТ"
+print(output)

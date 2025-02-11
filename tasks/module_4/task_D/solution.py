@@ -13,3 +13,12 @@ Output:
 """
 
 # TODO: Напишите свой код ниже
+my_string = input()
+result = dict()
+for char in my_string:
+    letter = char.lower()
+    if letter in result:
+        result[letter] += 1
+    else:
+        result[letter] = 1
+print(result)

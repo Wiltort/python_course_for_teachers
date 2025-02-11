@@ -34,7 +34,7 @@ class TestTaskSolution(unittest.TestCase):
         """Test with 10 random numbers"""
         for _ in range(10):
             input_text = f"{str(randint(100,1000000))}\n"
-            expected_output = "да" if input_text[0] == input_text[-1] else "нет"
+            expected_output = "да" if input_text[0] == input_text[-2] else "нет"
             self.assertEqual(
                 self.run_program_with_input(input_text).lower(),
                 expected_output,
