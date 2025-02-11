@@ -11,16 +11,3 @@ F(n) будет равно 3?
 """
 
 # TODO: Напишите свой код ниже
-
-def F(n):
-    if n == 0:
-        return 0
-    if n % 2 == 0:
-        return F(n / 2) - 1
-    return 2 + F(n - 1)
-
-count = 0
-for i in range(1000):
-    if F(i) == 3:
-        count += 1
-print(count)

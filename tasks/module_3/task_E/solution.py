@@ -9,9 +9,3 @@
 """
 
 # TODO: Напишите свой код ниже
-my_dict = dict()
-for _ in range(3):
-    key = input('Введите ключ: ')
-    value = input('Введите значение: ')
-    my_dict[key] = value
-print(my_dict)

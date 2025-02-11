@@ -10,19 +10,3 @@
 
 # TODO: Напишите свой код ниже
 
-with open("input_data/m7_D.txt") as f:
-    numbers = [int(a) for a in f]
-maximum = -100000
-for number in numbers:
-    if len(str(number)) == 4:
-        maximum = max(maximum, number)
-count = 0
-max_sum = -200000
-for i in range(len(numbers) - 1):
-    duplet = numbers[i:i + 2]
-    dif = abs(duplet[0] - duplet[1])
-    sum = duplet[0] + duplet[1]
-    if dif >= maximum:
-        count += 1
-        max_sum = max(max_sum, sum)
-print(count, max_sum)

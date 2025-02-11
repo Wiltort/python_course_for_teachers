@@ -10,10 +10,6 @@ class TestTaskSolution(unittest.TestCase):
         print("-" * 70)
         print("Тесты для задачи D (модуль 3)...")
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Все тесты успешно пройдены!")
-
     def setUp(self):
         # Redirect stdout to capture print statements
         self.captured_output = StringIO()

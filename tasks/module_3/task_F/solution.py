@@ -12,8 +12,3 @@ first_set = {2, 8, 6, 12, 11}
 second_set = {5, 6, 7, 8, 11}
 
 # TODO: Напишите свой код ниже
-first_set.add(4)
-third_set = first_set.intersection(second_set)
-my_list = list(third_set)
-print(third_set)
-print(my_list)

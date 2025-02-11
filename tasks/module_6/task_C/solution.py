@@ -22,13 +22,3 @@ YES
 """
 
 # TODO: Напишите свой код ниже
-N = int(input())
-min_speed = 301
-overspeed = 'NO'
-for i in range(N):
-    speed = int(input())
-    min_speed = min(speed, min_speed)
-    if speed > 80:
-        overspeed = 'YES'
-print(min_speed)
-print(overspeed)

@@ -22,7 +22,3 @@ Output:
 """
 
 # TODO: Напишите свой код ниже
-a = int(input())
-b = int(input())
-c = int(input())
-print(a * b * c)

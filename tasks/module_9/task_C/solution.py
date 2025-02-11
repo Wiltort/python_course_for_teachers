@@ -40,29 +40,3 @@
 """
 
 # TODO: Напишите свой код ниже
-with open("input_data/m9_C.txt") as f:
-    N = int(f.readline())
-    data = dict()
-    for i in range(N):
-        raw, number, town = [int(a) for a in f.readline().split()]
-        if raw in data:
-            data[raw].append((number, town))
-        else:
-            data[raw] = [(number, town)]
-raws = sorted(list(data.keys()), reverse=True)
-for r in raws:
-    data[r].sort(key=lambda x: x[0])
-    criteria_1 = False
-    count = 1 if data[r][-1][1] == 0 else 0
-    for i in range(len(data[r]) - 1):
-        if data[r][i][1] == 0:
-            count += 1
-        if (
-            data[r][i + 1][0] - data[r][i][0] == 101
-            and data[r][i + 1][1] == 1
-            and data[r][i][1] == 1
-        ):
-            criteria_1 = True
-    if count >= 500 and criteria_1:
-        print(r, len(data[r]) - count)
-        break

@@ -15,10 +15,3 @@
 """
 
 # TODO: Напишите свой код ниже
-n = int(input())
-res = 0
-for i in range(n):
-    a = int(input())
-    if a % 3 == 0:
-        res += a
-print(res)

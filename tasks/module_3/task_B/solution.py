@@ -16,7 +16,3 @@ Output:
 """
 
 # TODO: Напишите свой код ниже
-price = int(input())
-cash = int(input())
-result = cash // price
-print(result)

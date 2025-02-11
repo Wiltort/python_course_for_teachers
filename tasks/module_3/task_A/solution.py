@@ -11,6 +11,3 @@ Output:
 """
 
 # TODO: Напишите свой код ниже
-name = input()
-age = input()
-print(f"Вас зовут {name}. Ваш возраст: {age}!")
